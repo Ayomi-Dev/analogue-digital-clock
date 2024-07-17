@@ -1,0 +1,146 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #acbaba;
+}
+.clock{
+    padding: 10px 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 550px;
+    height: 550px;
+    border-radius: 50px;
+    background: #fff;
+    box-shadow: 30px 30px 30px -10px rgba(0, 0, 0, 0.15),
+    inset 15px 15px 10px rgba(255, 255, 255, 0.75), 
+    -15px -15px 35px rgba(255, 255, 255, 0.55),
+    inset -2px -2px 15px rgba(0, 0, 0, 0.2);
+    /* background: #1b4a5a; */
+}
+.counter{
+    position: absolute;
+    top: 10px;
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    margin: 0 auto;
+    background: #204664;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 7px 7px 20px #acbaba,
+    inset 7px 7px 7px rgba(255, 255, 255, 0.55),
+    -9px -9px 15px rgba(255, 255, 255, 1);
+}
+.counter span{
+    position: absolute;
+    color: #fff;
+    transform: rotate(calc(30deg * var(--i)));
+    font-size: 1.2rem;
+    text-align: center;
+    inset: 10px;
+}
+.counter span b{
+    display: inline-block;
+    transform: rotate(calc(-30deg * var(--i)));
+    font-weight: bold;
+}
+.counter .hands{
+    position: absolute;
+    border-radius: 50%;
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 10;
+}
+.counter .hands i{
+    position: absolute;
+    width: 5px;
+    height: 50%;
+    background: var(--clr);
+    /* opacity: 0.75; */
+    transform-origin: bottom;
+    transform: scaleY(0.9);
+}
+.counter::before{
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(#dc143c, #2196f3);
+    inset: 40px;
+    animation: spin 2s linear infinite;
+}
+@keyframes spin{
+    0%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+.counter::after{
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: #204664;
+    inset: 45px;
+}
+.counter .hands#minute i{
+    width: 3px;
+}
+.counter .hands#second i{
+    width: 1px;
+}
+.counter .hands#minute{
+    width: 230px;
+    height: 250px;
+}
+.counter .hands#hour{
+    width: 180px;
+    height: 160px;
+}
+.counter .hands::before{
+    content: '';
+    position: absolute;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background: var(--clr);
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.digital{
+    position: absolute;
+    bottom: 20px;
+    width: 50%;
+    height: 70px;
+    border-radius: 10px;
+    margin: 0 auto;
+    background: #204664;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 20px #acbaba,
+    inset 7px 7px 7px rgba(255, 255, 255, 0.55),
+    -9px -9px 15px rgba(255, 255, 255, 1);
+}
+.digital span{
+    color: var(--clr);
+    font-size: 2rem;
+    font-weight: bolder;
+    margin: 0 5PX;
+}
