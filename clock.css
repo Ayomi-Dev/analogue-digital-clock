@@ -64,7 +64,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    z-index: 10;
+    z-index: 15;
 }
 .counter .hands i{
     position: absolute;
