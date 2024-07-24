@@ -11,28 +11,10 @@ const updateClock = () => {
     
 }
 
-const digitalClock = () => {
-    const now = new Date();
-    
-    const hour = now.getHours();//extract hour value
-    const minute = now.getMinutes(); //extracting minute value
-    const seconds = now.getSeconds(); //extract seconds value
-    let hour12 = ''
-    // consosle.log(time12hr)
-    document.querySelector('.hr').innerText = `${hour} : `
-    document.querySelector('.min').innerText = `${minute} : `
-    document.querySelector('.sec').innerText = `${seconds} `
 
-    if(seconds < 10){
-        document.querySelector('.sec').innerText = `0${seconds}`
-    }
-    if(minute < 10) {
-        document.querySelector('.min').innerText = `0${minute} :`
-    }
-}
 
 //12 hour clock
-const clock12hr = () => {
+const didgital12hrClock = () => {
     const now = new Date();
     const time12hr = now.toLocaleTimeString('en-US', {hour12: true})
     const hour = parseInt(time12hr.split('')[0])
@@ -44,15 +26,23 @@ const clock12hr = () => {
     document.querySelector('.min').innerText = `${minute} : `
     document.querySelector('.sec').innerText = `${seconds} `
     document.querySelector('.time').innerText = `${zone} `
-    // console.log(time12hr)
+
+    if(seconds < 10){
+        document.querySelector('.sec').innerText = `0${seconds}`
+        
+    }
+    if(minute < 10) {
+        document.querySelector('.min').innerText = `0${minute} :`
+    }
+    console.log(time12hr)
     // console.log(hour, minute, seconds, zone)
 }
-clock12hr()
+// clock12hr()
 // digitalClock();
 updateClock();
 
 setInterval(() => {
     updateClock();
-    clock12hr();
+    didgital12hrClock();
     // digitalClock();
 }, 1000)
