@@ -12,28 +12,26 @@ body{
     background: #acbaba;
 }
 .clock{
-    padding: 10px 0;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 550px;
-    height: 550px;
+    gap: 20px;
+    flex-direction: column;
+    padding: 20px 30px;
     border-radius: 50px;
     background: #fff;
     box-shadow: 30px 30px 30px -10px rgba(0, 0, 0, 0.15),
     inset 15px 15px 10px rgba(255, 255, 255, 0.75), 
     -15px -15px 35px rgba(255, 255, 255, 0.55),
     inset -2px -2px 15px rgba(0, 0, 0, 0.2);
-    /* background: #1b4a5a; */
 }
 .counter{
-    position: absolute;
-    top: 10px;
-    width: 75%;
-    height: 75%;
+    position: relative;
+    width: 500px;
+    height: 500px;
     border-radius: 50%;
-    margin: 0 auto;
+    margin:  auto;
     background: #204664;
     display: flex;
     justify-content: center;
@@ -42,13 +40,15 @@ body{
     inset 7px 7px 7px rgba(255, 255, 255, 0.55),
     -9px -9px 15px rgba(255, 255, 255, 1);
 }
+
+
 .counter span{
     position: absolute;
     color: #fff;
     transform: rotate(calc(30deg * var(--i)));
     font-size: 1.2rem;
     text-align: center;
-    inset: 10px;
+    inset: 15px;
 }
 .counter span b{
     display: inline-block;
@@ -71,7 +71,7 @@ body{
     width: 5px;
     height: 50%;
     background: var(--clr);
-    /* opacity: 0.75; */
+    opacity: 0.75;
     transform-origin: bottom;
     transform: scaleY(0.9);
 }
@@ -97,7 +97,7 @@ body{
     border-radius: 50%;
     background: #204664;
     inset: 45px;
-}
+} 
 .counter .hands#minute i{
     width: 3px;
 }
@@ -105,12 +105,12 @@ body{
     width: 1px;
 }
 .counter .hands#minute{
-    width: 230px;
-    height: 250px;
+    width: 40%;
+    height: 50%;
 }
 .counter .hands#hour{
-    width: 180px;
-    height: 160px;
+    width: 18%;
+    height: 30%;
 }
 .counter .hands::before{
     content: '';
@@ -124,12 +124,10 @@ body{
     transform: translateX(-50%);
 }
 .digital{
-    position: absolute;
-    bottom: 20px;
-    width: 50%;
-    height: 70px;
+    /* width: 50%; */
+    padding: 20px 10px;
     border-radius: 10px;
-    margin: 0 auto;
+    margin: 0px auto;
     background: #204664;
     display: flex;
     justify-content: center;
@@ -143,4 +141,17 @@ body{
     font-size: 2rem;
     font-weight: bolder;
     margin: 0 5PX;
+}
+@media screen and (max-width: 600px) {
+    .counter{
+        width: 300px;
+        height: 300px; 
+    }
+    .digital{
+        padding: 20px 10px;
+       
+    }
+    .digital span{
+        font-size: 1.5rem;
+    }
 }
